@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly - Interactive Dictionary SPA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <header class="navbar navbar-expand-lg border-bottom py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="navbar-brand h1 mb-0 fw-bold text-gradient">📖 Wordly</span>
+            <button id="themeToggleBtn" class="btn btn-outline-secondary btn-sm">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card p-4 shadow-sm search-card">
+                    <h2 class="mb-3 fs-4 fw-semibold">Search for a Word</h2>
+                    <form id="searchForm" class="input-group mb-3">
+                        <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Type a word here (e.g., 'serendipity')..." required autocomplete="off">
+                        <button class="btn btn-primary px-4" type="submit">Search</button>
+                    </form>
+                    <div id="errorContainer" class="alert alert-danger d-none" role="alert"></div>
+                </div>
+
+                <div id="resultContainer" class="card p-4 shadow-sm mt-4 d-none">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                        <div>
+                            <h1 id="resultWord" class="display-5 fw-bold mb-1">Word</h1>
+                            <p id="resultPhonetic" class="text-muted fs-5 mb-0">/phonetic/</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button id="playAudioBtn" class="btn btn-outline-primary d-none">🔊 Play Audio</button>
+                            <button id="saveWordBtn" class="btn btn-success">⭐ Save Word</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="meaningsContainer"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card p-4 shadow-sm saved-card">
+                    <h3 class="fs-5 fw-bold mb-3">⭐ Saved Words</h3>
+                    <p class="text-muted small">Click a word to search it again quickly.</p>
+                    <ul id="savedWordsList" class="list-group list-group-flush">
+                        </ul>
+                    <button id="clearSavedBtn" class="btn btn-sm btn-outline-danger mt-3 d-none">Clear All Saved</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 border-top mt-auto">
+        <p class="text-muted mb-0">&copy; 2026 Wordly Dictionary SPA. Built for modern learners.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

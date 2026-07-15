@@ -1,0 +1,55 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+}
+
+body.dark-theme {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --border-color: #333333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Saved words interactivity */
+.saved-word-item {
+    cursor: pointer;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.saved-word-item:hover {
+    background-color: rgba(13, 110, 253, 0.1) !important;
+}
+
+hr {
+    border-color: var(--border-color);
+}
